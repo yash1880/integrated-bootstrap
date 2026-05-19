@@ -1,0 +1,320 @@
+/* ==========================================================================
+   1. CUSTOM FONTS INTEGRATION
+   ========================================================================== */
+@font-face {
+    font-family: 'Betterlett Regular';
+    src: url('/assets/fonts/betterlett-regular.woff2') format('woff2'),
+         url('/assets/fonts/betterlett-regular.woff') format('woff'),
+         url('/assets/fonts/betterlett-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   2. CORE VARIABLES & GLOBAL STYLES
+   ========================================================================== */
+:root {
+    --primary-color-100: #EBDFDC;
+    --primary-color-200: #E1CAD0;
+    --primary-color: #C08A99;
+    --secondry-color: #F8F3EE;
+    --description-color: #5B534A;
+    --title-color: #40372C;
+    --button-color: #66715A;
+    --white-color: #fff;
+    --title-font: 'Mogan', serif;
+    --special-font: 'Betterlett Regular', sans-serif; 
+}
+
+body {
+    background-color: var(--white-color);
+    color: var(--description-color);
+    font-family: 'Figtree', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   3. THEME BUTTONS
+   ========================================================================== */
+.btn-turnery {
+    background-color: var(--button-color);
+    color: var(--white-color) !important;
+    border: 1px solid var(--button-color);
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-turnery:hover {
+    background-color: transparent !important;
+    color: var(--button-color) !important;
+    border-color: var(--button-color);
+}
+
+.service-button {
+    padding: 18px 38px;
+    background-color: var(--button-color);
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.service-button:hover {
+    background-color: var(--title-color);
+    color: var(--white-color);
+}
+
+/* ==========================================================================
+   4. LAYOUT COMPONENTS & MIXINS
+   ========================================================================== */
+.bg-theme-secondary {
+    background-color: var(--secondry-color);
+}
+
+.title span {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.title h2 {
+    font-family: var(--title-font);
+    font-size: 46px;
+    color: var(--title-color);
+    line-height: 1.2;
+}
+
+.title h2 span, .banner-content h1 span {
+    font-family: var(--special-font);
+    color: var(--primary-color);
+    text-transform: none;
+}
+
+/* Hero Section */
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('/assets/images/hero-image/hero.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh;
+}
+
+.banner-content h1 {
+    font-family: var(--title-font);
+    font-size: clamp(42px, 6vw, 78px);
+    color: var(--title-color);
+    line-height: 1.1;
+}
+
+/* About Overlay Images */
+.about-image-item.image-2 {
+    position: absolute;
+    right: -15px;
+    bottom: -35px;
+    width: 55%;
+    z-index: 2;
+    border: 12px solid var(--white-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Services Minimal Grid Cards */
+.service-item {
+    text-align: center;
+    padding: 45px 25px;
+    background-color: var(--white-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06) !important;
+}
+
+/* Advanced Promo Layout Row */
+.service-advance {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-advance:hover .image-box img {
+    transform: scale(1.06);
+}
+
+.service-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    z-index: 2;
+}
+
+.service-content h4 {
+    font-family: var(--title-font);
+    font-size: 32px;
+    color: var(--white-color);
+}
+
+/* Pricing Structure Lists */
+.price-card {
+    background-color: var(--secondry-color);
+    padding: 35px;
+}
+
+.price-card h2 {
+    font-family: var(--title-font);
+    color: var(--title-color);
+    border-bottom: 2px solid var(--primary-color-200);
+    padding-bottom: 12px;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 16px;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+    padding-bottom: 6px;
+}
+
+.price-list li span:first-child {
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.price-list li span:last-child {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Parallax Static Banner */
+.gallary {
+    background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('/assets/images/gallery-img/gallery-1.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 480px;
+}
+
+.gallary-content {
+    background-color: var(--primary-color);
+    padding: 55px;
+    color: var(--white-color);
+}
+
+/* Product Catalogue Cards */
+.nail-img {
+    text-align: center;
+    background-color: var(--secondry-color);
+    padding: 35px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nail-img img {
+    height: 260px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.nail-img:hover img {
+    transform: scale(1.03);
+}
+
+.nail-img .btn-turnery {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3;
+    width: 75%;
+    padding: 10px 15px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nail-img:hover .btn-turnery {
+    opacity: 1;
+    visibility: visible;
+}
+
+.star i, .star-2 i {
+    color: #ffb703;
+}
+
+/* FAQ Interactive Accents */
+.que li div.fw-bold {
+    font-size: 17px;
+    letter-spacing: 0.2px;
+}
+
+/* Infinite Seamless Footer Lookbook Images */
+.gallary-image {
+    overflow: hidden;
+}
+
+.gallary-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallary-image:hover img {
+    transform: scale(1.07);
+}
+
+/* Form Interactivity Focus Tweak */
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(192, 138, 153, 0.25) !important;
+}
+
+.img-transition { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.style-card:hover .img-transition { transform: scale(1.06); }
+/* Hero Section Background */
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.01)), url('./assets/images/hero-image/hero.webp'); /* 👈 Exact Relative path */
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh;
+}
+
+.gallary {
+    background-image: linear-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.02)), url('./assets/images/gallery-img/gallery-1.webp'); /* 👈 Exact Relative path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 480px;
+}
