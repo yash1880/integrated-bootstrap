@@ -1,3 +1,5 @@
+(https://la-diva.cmsmasters.studio/main/home-2/)
+
 # 💇‍♀️ LADIVA Salon Website
 
 A modern and fully responsive **Salon & Beauty Website** developed using **React.js** and **Vite**.  
